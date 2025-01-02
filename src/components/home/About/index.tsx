@@ -7,7 +7,7 @@ export const About = () => {
         <h1 className="font-titleSubtitle text-3xl font-semibold md:pt-8 md:text-4xl">
           Hola, soy Daniel Rodríguez, desarrollador
         </h1>
-        <p className=" font-textSegundary text-base font-medium md:text-lg">
+        <p className=" font-textSegundary  text-base font-bold text-neutral-500 md:text-lg">
           Cada producto tiene su propia historia y su propio sueño.
         </p>
         <p className=" font-textPrimary text-base font-normal md:text-lg">
