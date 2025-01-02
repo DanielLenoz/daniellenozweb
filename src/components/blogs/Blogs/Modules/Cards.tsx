@@ -2,8 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ScrollAnimation from 'react-animate-on-scroll'
 import 'animate.css/animate.compat.css'
+import { DataType } from 'app/supabase/database.types'
 
-export const Cards = ({ Blogs }: { Blogs: any[] | null }) => {
+export const Cards = ({ Blogs }: { Blogs: DataType[] }) => {
   return (
     <section className="flex flex-wrap justify-center gap-2 sm:grid sm:grid-cols-2 lg:grid-cols-3">
       {Blogs?.map((blog) => {
@@ -11,11 +12,11 @@ export const Cards = ({ Blogs }: { Blogs: any[] | null }) => {
           <ScrollAnimation
             key={blog.title}
             animateIn="fadeIn"
-            className=" relative grid max-h-[572px] max-w-[387px] items-center justify-items-center overflow-hidden rounded-2xl shadow-xl shadow-slate-500"
+            className=" relative grid max-h-[572px] max-w-[387px] items-center justify-items-center overflow-hidden rounded-2xl shadow-xl shadow-slate-500 "
           >
             <Image
-              className="rounded-2xl"
-              src={blog.img.small}
+              className="rounded-2xl "
+              src={blog.img?.small || '/path/to/default/image.jpg'}
               alt={blog.title}
               width={390}
               height={230}
@@ -35,8 +36,8 @@ export const Cards = ({ Blogs }: { Blogs: any[] | null }) => {
                 <Link href={`/Blogs/${encodeURIComponent(blog.title)}`}>
                   Leer mas
                 </Link>
-                <time itemProp="datePublished" dateTime={blog.created_at}>
-                  {blog.created_at}
+                <time itemProp="datePublished" dateTime={blog.createdAt}>
+                  {blog.createdAt}
                 </time>
               </article>
             </article>

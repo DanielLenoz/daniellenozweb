@@ -9,7 +9,7 @@ import './carrusel.model.css'
 
 interface CertificateSectionsProps {
   title: string | null
-  data: any | null
+  data: { img: { img: string; alt: string }[] } | null
 }
 
 export const CertificateSections: React.FC<CertificateSectionsProps> = ({
@@ -42,7 +42,7 @@ export const CertificateSections: React.FC<CertificateSectionsProps> = ({
         modules={[Keyboard, Pagination, Navigation, Autoplay]}
         className="mySwiper mb-3 w-full"
       >
-        {image?.map(({ img, alt }: any) => (
+        {image?.map(({ img, alt }: { img: string; alt: string }) => (
           <SwiperSlide
             className="flex items-center justify-center object-cover"
             key={alt}

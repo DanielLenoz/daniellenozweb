@@ -43,14 +43,14 @@ export const HomePage = () => {
           disableOnInteraction: false,
         }}
         modules={[Keyboard, Pagination, Navigation, Autoplay]}
-        className="mySwiper mb-3 w-full shadow"
+        className="mySwiper skeleton mb-3 min-h-[150px] w-full bg-gray-300 shadow  md:min-h-[350px]"
       >
-        {blogs?.map((blog: any) => (
-          <SwiperSlide className="object-cover shadow" key={blog.title}>
+        {blogs?.map((blog: DataType) => (
+          <SwiperSlide className="object-cover  " key={blog.title}>
             <article className=" relative grid place-items-center">
               <Image
                 className="max-h-[400px] object-cover sm:hidden"
-                src={blog.img.small}
+                src={blog.img?.small || '/path/to/default/image.jpg'}
                 alt={blog.title}
                 width={635}
                 height={374}
@@ -58,7 +58,7 @@ export const HomePage = () => {
               />
               <Image
                 className="hidden max-h-[400px] object-cover sm:block"
-                src={blog.img.full}
+                src={blog.img?.full || '/path/to/default/image.jpg'}
                 alt={blog.title}
                 width={1440}
                 height={400}

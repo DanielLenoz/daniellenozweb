@@ -37,13 +37,11 @@ export default async function Works(props: Works) {
 
   const decodedTitle = decodeURIComponent(works[0])
 
-  const filterWorks = Projects?.filter(
-    (data: any) => data.title == decodedTitle,
-  )
+  const filterWorks = Projects?.filter((data) => data.title == decodedTitle)
 
   return (
     <main className="grid gap-3 px-2 pb-2 md:px-32">
-      {filterWorks?.map((project: any) => {
+      {filterWorks?.map((project) => {
         return (
           <>
             <Image
@@ -70,7 +68,7 @@ export default async function Works(props: Works) {
               </h1>
 
               <section className="flex">
-                {project.imgFrameworks.map((img: any) => {
+                {project.imgFrameworks.map((img: { img: string }) => {
                   return (
                     <Image
                       className="mr-[-24px] "
@@ -124,7 +122,7 @@ export default async function Works(props: Works) {
                 </h1>
 
                 <section className="flex">
-                  {project.imgFrameworks.map((img: any) => {
+                  {project.imgFrameworks.map((img: { img: string }) => {
                     return (
                       <Image
                         className="mr-[-24px] "

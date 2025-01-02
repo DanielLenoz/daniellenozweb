@@ -7,7 +7,6 @@ import { Searcher } from './Searcher'
 
 export interface SearcherProps {
   setCategories: (value: string) => void
-  searchValue: string
   setSearchValue: (value: string) => void
 }
 
@@ -51,11 +50,7 @@ export const Modules = () => {
 
   return (
     <>
-      <Searcher
-        setCategories={setCategories}
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
+      <Searcher setCategories={setCategories} setSearchValue={setSearchValue} />
       <Cards Works={filteredWorks} />
     </>
   )

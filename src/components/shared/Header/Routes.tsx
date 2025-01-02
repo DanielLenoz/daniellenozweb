@@ -3,7 +3,12 @@ import { GoHomeFill } from 'react-icons/go'
 import { MdLibraryBooks } from 'react-icons/md'
 import { RiVerifiedBadgeFill } from 'react-icons/ri'
 
-export const Routes = ({ setVisibleLeft, desktop }: any) => {
+interface RoutesProps {
+  setVisibleLeft: (visible: boolean) => void;
+  desktop: boolean;
+}
+
+export const Routes: React.FC<RoutesProps> = ({ setVisibleLeft, desktop }) => {
   const navLinks = [
     {
       href: '/',

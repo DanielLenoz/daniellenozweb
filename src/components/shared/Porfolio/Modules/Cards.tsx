@@ -4,8 +4,9 @@ import { CiGlobe } from 'react-icons/ci'
 import { RiGithubFill } from 'react-icons/ri'
 import ScrollAnimation from 'react-animate-on-scroll'
 import 'animate.css/animate.compat.css'
+import { DataType } from 'app/supabase/database.types'
 
-export const Cards = ({ Works }: { Works: any[] | null }) => {
+export const Cards = ({ Works }: { Works: DataType[]}) => {
   return (
     <section className="flex flex-wrap justify-center gap-2">
       {Works?.map((Works) => {
@@ -17,7 +18,7 @@ export const Cards = ({ Works }: { Works: any[] | null }) => {
             className=" relative grid max-h-[246] max-w-[390] items-center justify-items-center overflow-hidden rounded-2xl shadow-xl shadow-gray-500 "
           >
             <Image
-              src={Works.img?.small}
+              src={Works.img?.small || '/path/to/default/image.jpg'}
               width={400}
               height={300}
               alt={Works?.title}
@@ -41,7 +42,7 @@ export const Cards = ({ Works }: { Works: any[] | null }) => {
               <div className="group absolute -bottom-[10px] -left-[10px] grid items-center justify-items-center">
                 <a
                   className=" z-10 grid h-9 w-9 items-center justify-center rounded-full  bg-mygradiente"
-                  href={Works.Links?.github}
+                  href={Works.links?.github}
                   target="_blank"
                 >
                   <RiGithubFill className="h-6 w-6 fill-segundaryDark" />
@@ -51,7 +52,7 @@ export const Cards = ({ Works }: { Works: any[] | null }) => {
               <div className="group absolute -bottom-[10px] -right-[10px] grid items-center justify-items-center">
                 <a
                   className=" z-10 grid h-9 w-9 items-center justify-center rounded-full  bg-mygradiente"
-                  href={Works.Links?.website}
+                  href={Works.links?.website}
                   target="_blank"
                 >
                   <CiGlobe className="h-6 w-6 fill-segundaryDark" />
