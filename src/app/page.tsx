@@ -11,7 +11,7 @@ export default function Home() {
       <section className="grid gap-3 px-2 md:px-32">
         <About />
         <Experience />
-       
+
         <Porfolio />
       </section>
     </main>

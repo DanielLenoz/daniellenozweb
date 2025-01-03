@@ -1,4 +1,4 @@
-import { PlaceholdersAndVanishInput } from 'app/components/aceternityUI/placeholders-and-vanish-input-principal'
+import { PlaceholdersAndVanishInput } from 'app/components/aceternityUI/placeholders-and-vanish-input-works'
 import { SearcherProps } from '.'
 
 const options = [

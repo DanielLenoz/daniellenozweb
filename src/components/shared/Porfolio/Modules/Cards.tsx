@@ -5,7 +5,8 @@ import { RiGithubFill } from 'react-icons/ri'
 import ScrollAnimation from 'react-animate-on-scroll'
 import 'animate.css/animate.compat.css'
 import { DataType } from 'app/supabase/database.types'
-
+import { FocusCards } from 'app/components/aceternityUI/focus-cards-works'
+/*
 export const Cards = ({ Works }: { Works: DataType[]}) => {
   return (
     <section className="flex flex-wrap justify-center gap-2">
@@ -63,6 +64,13 @@ export const Cards = ({ Works }: { Works: DataType[]}) => {
           </ScrollAnimation>
         )
       })}
+    </section>
+  )
+}*/
+export const Cards = ({ Works }: { Works: DataType[]}) => {
+  return (
+    <section className="flex flex-wrap justify-center gap-2">
+      <FocusCards cards={Works} />
     </section>
   )
 }

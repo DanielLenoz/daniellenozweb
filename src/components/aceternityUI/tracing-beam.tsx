@@ -32,7 +32,7 @@ export const TracingBeam = ({
   }, [])
 
   const y1 = useSpring(
-    useTransform(scrollYProgress, [0, 0.8], [50, svgHeight]),
+    useTransform(scrollYProgress, [0, 0.1], [50, svgHeight]),
     {
       stiffness: 500,
       damping: 90,
@@ -63,7 +63,7 @@ export const TracingBeam = ({
                 ? 'none'
                 : 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
           }}
-          className="border-netural-200 ml-[27px] flex h-4 w-4 items-center justify-center rounded-full border shadow-sm"
+          className=" ml-[27px] flex h-4 w-4 items-center justify-center rounded-full bg-segundary shadow-sm"
         >
           <motion.div
             transition={{
@@ -71,10 +71,10 @@ export const TracingBeam = ({
               delay: 0.2,
             }}
             animate={{
-              backgroundColor: scrollYProgress.get() > 0 ? 'white' : '#99BAC7',
-              borderColor: scrollYProgress.get() > 0 ? 'white' : '#3C7C98',
+              backgroundColor: scrollYProgress.get() > 0 ? 'white' : '#fff',
+              borderColor: scrollYProgress.get() > 0 ? 'white' : '#ffff',
             }}
-            className="h-2 w-2  rounded-full border border-neutral-300 bg-white"
+            className="h-2 w-2  rounded-full bg-white"
           />
         </motion.div>
         <svg
