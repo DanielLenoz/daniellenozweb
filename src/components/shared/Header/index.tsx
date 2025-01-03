@@ -111,7 +111,7 @@ export const Header = () => {
         />
         <div className=" mb-2 h-[2px] bg-slate-400"></div>
         <ul className="grid gap-1 font-titleSubtitle text-2xl font-semibold">
-          <Routes setVisibleLeft={setVisibleLeft} />
+          <Routes setVisibleLeft={setVisibleLeft} desktop={false} />
         </ul>
       </Sidebar>
     </>
