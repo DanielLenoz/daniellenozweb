@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React from 'react'
 import { Timeline } from 'app/components/aceternityUI/timeline'
 
@@ -62,19 +61,19 @@ export const Experience = () => {
       content: (
         <div>
           <h2 className="pb-2 font-titleSubtitle text-2xl font-semibold md:text-3xl ">
-            Coordinador Audiovisual y Logístico – Eventos Profesionales
+            Coordinador Audiovisual y Logístico - Eventos Profesionales
           </h2>
           <p className=" font-textPrimary text-base font-normal md:text-lg">
             <span>Aporte y trabaje en el equipo</span> de audiovisuales, para la
             implementación de flayes en un tiempo optimizado y manejo de
             plataformas para la transmisión del evento en vivo . Evento
-            <span>'Avivamiento con un Río'</span>
+            <span>Avivamiento con un Río</span>
           </p>
           <p className=" font-textPrimary text-base font-normal md:text-lg">
             <span>
               Coordinación logística y soporte a la parte administrativa
             </span>{' '}
-            en el evento <span>“Encuentro”</span>, logrando una experiencia
+            en el evento <span>Encuentro</span>, logrando una experiencia
             fluida para asistentes y organizadores.
           </p>
         </div>
