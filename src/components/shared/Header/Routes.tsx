@@ -4,7 +4,7 @@ import { MdLibraryBooks } from 'react-icons/md'
 import { RiVerifiedBadgeFill } from 'react-icons/ri'
 
 interface RoutesProps {
-  setVisibleLeft: (visible: boolean) => void;
+  setVisibleLeft?: (visible: boolean) => void;
   desktop: boolean;
 }
 
@@ -34,7 +34,7 @@ export const Routes: React.FC<RoutesProps> = ({ setVisibleLeft, desktop }) => {
           <Link
             className="flex items-center gap-1 border-b-2 border-transparent transition ease-in-out hover:border-slate-400"
             href={href}
-            onClick={() => setVisibleLeft(false)}
+            onClick={() => setVisibleLeft?.(false)}
           >
             {desktop ? true : icon}
             {text}
