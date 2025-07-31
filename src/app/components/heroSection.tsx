@@ -24,6 +24,14 @@ export function HeroSection() {
     };
   }, []);
 
+  // Función para hacer scroll suave a la sección de proyectos
+  const handleScrollToProjects = () => {
+    const section = document.getElementById("proyectos");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="inicio"
@@ -135,7 +143,10 @@ export function HeroSection() {
           className="animate-fade-in-up mb-12 flex flex-col items-center justify-center gap-6 sm:flex-row"
           style={{ animationDelay: "0.8s" }}
         >
-          <button className="group flex items-center rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 px-8 py-3 text-white transition-all duration-500 hover:scale-110 hover:from-blue-700 hover:via-purple-700 hover:to-cyan-700 hover:shadow-2xl hover:shadow-blue-500/25">
+          <button
+            className="group flex items-center rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 px-8 py-3 text-white transition-all duration-500 hover:scale-110 hover:from-blue-700 hover:via-purple-700 hover:to-cyan-700 hover:shadow-2xl hover:shadow-blue-500/25"
+            onClick={handleScrollToProjects}
+          >
             <span className="mr-3 text-lg font-semibold">
               Explorar Proyectos
             </span>
@@ -143,7 +154,7 @@ export function HeroSection() {
           </button>
           <button className="group flex items-center rounded-full border-2 border-white/30 bg-transparent px-8 py-3 text-white backdrop-blur-sm transition-all duration-500 hover:scale-110 hover:border-white/50 hover:bg-white/10">
             <Download className="mr-3 h-5 w-5 transition-all duration-300 group-hover:translate-y-1 group-hover:scale-110" />
-            <span className="text-lg font-semibold">Descargar CV</span>
+            <a href="/cv.pdf" download className="text-lg font-semibold">Descargar CV</a>
           </button>
         </section>
 
