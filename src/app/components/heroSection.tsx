@@ -106,9 +106,7 @@ export function HeroSection() {
             style={{ animationDelay: "0.4s" }}
           >
             <p className="animate-pulse text-blue-400">
-              Desarrollador Full Stack Es el hombre mas hermoso que he visto, y
-              lo amo muchooooooo te quiero mucho mi corazón ruar asjjasjsjas no
-              existe nadie como el, es el mejor del mundo
+              Desarrollador Full Stack
             </p>
             <span className="mx-4 text-gray-500">•</span>
             <p
