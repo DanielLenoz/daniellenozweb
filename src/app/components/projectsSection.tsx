@@ -5,11 +5,11 @@ import { Github, Eye } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { supabase } from "app/supabase/client";
+import type { DataType } from "../../supabase/database.types";
 
 export function ProjectsSection() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-
-  const [projects, setProjects] = useState<any[]>([]);
+  const [projects, setProjects] = useState<DataType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -24,10 +24,14 @@ export function ProjectsSection() {
         if (error) {
           setError(error.message);
         } else if (data) {
-          setProjects(data);
+          setProjects(data as DataType[]);
         }
-      } catch (err: any) {
-        setError(err.message);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("Error desconocido");
+        }
       } finally {
         setLoading(false);
       }
@@ -65,7 +69,7 @@ export function ProjectsSection() {
             <section className="relative overflow-hidden">
               {/* AQUÍ PUEDES USAR: BackgroundGradient de Aceternity UI para envolver la imagen */}
               <Image
-                src={project.image?.full}
+                src={project.image?.full || "/file.svg"}
                 alt={project.title}
                 width={500}
                 height={200}
@@ -111,26 +115,21 @@ export function ProjectsSection() {
 
               <section className="mb-4 flex flex-wrap gap-2">
                 {}
-                {project.technologies?.map(
-                  (tech: string, techIndex: number) => (
-                    console.log("Technology:", tech),
-                    (
-                      <p
-                        key={techIndex}
-                        className="rounded-full border border-blue-500/30 bg-gradient-to-r from-blue-500/20 to-purple-500/20 px-3 py-1 text-sm text-blue-300"
-                      >
-                        {tech}
-                      </p>
-                    )
-                  ),
-                )}
+                {project.technologies?.map((techObj, techIndex) => (
+                  <p
+                    key={techIndex}
+                    className="rounded-full border border-blue-500/30 bg-gradient-to-r from-blue-500/20 to-purple-500/20 px-3 py-1 text-sm text-blue-300"
+                  >
+                    {typeof techObj === "string" ? techObj : techObj.tech}
+                  </p>
+                ))}
               </section>
 
               <section className="flex gap-3">
                 {/* AQUÍ PUEDES USAR: GlowingButton de ReactBits */}
                 <button className="h-10 w-full rounded-lg border-2 border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-black">
                   <Link
-                    href={`/proyecto/${project.slug}`}
+                    href={`/proyecto/${project.id}`}
                     className="flex items-center justify-center gap-2 px-4 py-0.5"
                   >
                     <Eye className="mr-2 h-4 w-4" />

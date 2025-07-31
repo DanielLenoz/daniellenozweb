@@ -32,7 +32,7 @@ export function ContactSection() {
           console.log("SUCCESS!");
           setFormData({ user_name: "", user_email: "", message: "" });
         },
-        (error: any) => {
+        (error: { text: string }) => {
           console.log("FAILED...", error.text);
         },
       );
