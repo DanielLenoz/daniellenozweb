@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { Github, Linkedin, Mail, Download, ArrowDown } from "lucide-react";
 import styles from "./styles.module.css";
-// import { Button } from "@/components/ui/button";
 export function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
@@ -152,7 +151,13 @@ export function HeroSection() {
           </button>
           <button className="group flex items-center rounded-full border-2 border-white/30 bg-transparent px-8 py-3 text-white backdrop-blur-sm transition-all duration-500 hover:scale-110 hover:border-white/50 hover:bg-white/10">
             <Download className="mr-3 h-5 w-5 transition-all duration-300 group-hover:translate-y-1 group-hover:scale-110" />
-            <a href="/cv.pdf" download className="text-lg font-semibold">Descargar CV</a>
+            <a
+              href="/Hoja_De_Vida_Daniel_Rodriguez.pdf_2025_7_15.pdf"
+              download
+              className="text-lg font-semibold"
+            >
+              Descargar CV
+            </a>
           </button>
         </section>
 
