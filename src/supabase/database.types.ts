@@ -1,4 +1,11 @@
 export interface DataType {
+  institution: string;
+  achievements: [string];
+  location: string;
+  period: string;
+  company: string;
+  type: string;
+  color: any;
   id: number;
   createdAt?: string; // Optional for flexibility
   title: string;
@@ -13,8 +20,8 @@ export interface DataType {
 }
 
 export interface image {
-  small: string
-  full: string
+  small: string;
+  full: string;
 }
 
 export interface technologies {
@@ -22,6 +29,6 @@ export interface technologies {
 }
 
 export interface Links {
-  github: string
-  website: string
+  github: string;
+  website: string;
 }

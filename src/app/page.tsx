@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HeroSection } from "./components/heroSection";
+import { HeroSection } from "./components/heroSection/heroSection";
 import { AboutSection } from "./components/aboutSection";
 import { ExperienceSection } from "./components/experienceSection";
 import { ProjectsSection } from "./components/projectsSection";

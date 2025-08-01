@@ -36,7 +36,7 @@ export function AboutSection() {
         </h2>
         <p className="mx-auto max-w-3xl text-xl text-gray-300">
           Soy un desarrollador apasionado por crear soluciones digitales
-          innovadoras. Con más de 3 años de experiencia, me especializo en
+          innovadoras. Con más de 2 años de experiencia, me especializo en
           construir aplicaciones web modernas que combinan funcionalidad
           excepcional con diseño atractivo.
         </p>
@@ -48,7 +48,7 @@ export function AboutSection() {
           return (
             <section
               key={index}
-              className="group border-1 rounded-2xl border-transparent  bg-gradient-to-br from-gray-900/50 to-gray-800/50 transition-all duration-300 hover:scale-105 hover:border-white/20"
+              className="group rounded-2xl border-1 border-transparent bg-gradient-to-br from-gray-900/50 to-gray-800/50 transition-all duration-300 hover:scale-105 hover:border-white/20"
             >
               <article className="p-6 text-center">
                 <div className="mb-4 inline-flex rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 p-3 transition-all duration-300 group-hover:from-blue-500/30 group-hover:to-purple-500/30">

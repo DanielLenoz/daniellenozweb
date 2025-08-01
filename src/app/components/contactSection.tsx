@@ -183,13 +183,12 @@ export function ContactSection() {
               <button
                 type="submit"
                 value="Enviar Correo"
-                className="w-full flex justify-center gap-x-2 cursor-pointer rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 py-3 text-white transition-all duration-300 hover:scale-105 hover:from-blue-700 hover:to-purple-700"
+                className="flex w-full cursor-pointer justify-center gap-x-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 py-3 text-white transition-all duration-300 hover:scale-105 hover:from-blue-700 hover:to-purple-700"
               >
                 <Send className="mr-2 h-5 w-5" />
                 Enviar Mensaje
               </button>
             </form>
-
           </div>
         </div>
 

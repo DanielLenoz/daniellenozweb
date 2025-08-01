@@ -19,8 +19,6 @@ export function ProjectsSection() {
       try {
         const { data, error } = await supabase.from("Projects").select("*");
 
-        console.log("Fetched projects:", data);
-
         if (error) {
           setError(error.message);
         } else if (data) {

@@ -1,90 +1,64 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Calendar, MapPin, Users, Code, Palette } from "lucide-react";
+import { supabase } from "app/supabase/client";
+import { DataType } from "app/supabase/database.types";
 
 export function ExperienceSection() {
-  const [activeExperience, setActiveExperience] = useState(0);
-
-  const experiences = [
+  const typeConfig = [
     {
-      title: "Frontend Developer y Diseñador UI",
-      company: "Freelance",
-      period: "Jun 2021 - Presente",
-      location: "Remoto",
       type: "Freelance",
-      description:
-        "Desarrollo de sitios web dinámicos y adaptativos utilizando React y Next.js, logrando interfaces rápidas y escalables que mejoraron la experiencia del usuario.",
-      achievements: [
-        "Desarrollo de sitios web dinámicos con React y Next.js",
-        "Exploración en nuevas tecnologías (Python, FastAPI)",
-        "Gestión de proyectos colaborativos con clientes",
-        "Enfoque en soluciones rápidas y escalables",
-      ],
-      technologies: ["React", "Next.js", "JavaScript", "CSS", "UI/UX"],
       icon: Code,
       color: "from-blue-500 to-cyan-500",
     },
     {
-      title: "Diseñador y Desarrollador Web",
-      company: "Espíritu Santo Palabra y Fuego",
-      period: "Jul 2023 - Presente",
-      location: "Colombia",
       type: "Proyecto",
-      description:
-        "Diseño y desarrollo de la página web oficial con Next.js, mejorando la accesibilidad y estética para los usuarios.",
-      achievements: [
-        "Desarrollo de página web oficial con Next.js",
-        "Mejora en accesibilidad y experiencia de usuario",
-        "Implementación de plataforma para gestión de eventos",
-        "Sistema integral para noticias y eventos",
-      ],
-      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
       icon: Palette,
       color: "from-purple-500 to-pink-500",
     },
     {
-      title: "Coordinador Audiovisual y Logístico",
-      company: "Eventos Profesionales",
-      period: "Sep 2024 - Oct 2024",
-      location: "Colombia",
       type: "Temporal",
-      description:
-        "Coordinación logística y soporte administrativo en eventos profesionales, logrando experiencias fluidas para asistentes y organizadores.",
-      achievements: [
-        "Coordinación de equipo audiovisual",
-        "Implementación de flyers optimizados",
-        "Manejo de plataformas de transmisión en vivo",
-        "Soporte logístico y administrativo",
-      ],
-      technologies: ["Gestión de Proyectos", "Coordinación", "Logística"],
       icon: Users,
       color: "from-green-500 to-emerald-500",
     },
+    // Agrega más tipos aquí si lo necesitas
   ];
 
-  const education = [
-    {
-      title: "Ingeniería de Sistemas",
-      institution: "Universidad Konrad Lorenz",
-      period: "2023 - 2024",
-      description:
-        "Conocimientos fundamentales en programación, análisis de sistemas y desarrollo de software en Java y Python",
-    },
-    {
-      title: "Desarrollo Web y Diseño",
-      institution: "Platzi",
-      period: "2021 - 2025",
-      description:
-        "Formación continua en desarrollo web, Python, FastAPI, React, Next.js y metodologías de diseño",
-    },
-    {
-      title: "Educación Certificada",
-      institution: "Politécnico de Suramericana",
-      period: "Último Semestre",
-      description: "Formación técnica especializada",
-    },
-  ];
+  const [activeExperience, setActiveExperience] = useState(0);
+  const [experiences, setExperiences] = useState<DataType[]>([]);
+  const [education, setEducacion] = useState<DataType[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        let { data: Educacion, error: error1 } = await supabase
+          .from("Educacion")
+          .select("*");
+
+        let { data: Experiences, error: error2 } = await supabase
+          .from("Experiences")
+          .select("*");
+
+        if (error1 || error2) {
+          throw new Error(error1?.message || error2?.message);
+        }
+        setExperiences(Experiences as DataType[]);
+        setEducacion(Educacion as DataType[]);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("Error desconocido");
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProjects();
+  }, []);
 
   return (
     <section
@@ -108,7 +82,13 @@ export function ExperienceSection() {
 
         <article className="space-y-12">
           {experiences.map((exp, index) => {
-            const Icon = exp.icon;
+            const Icon =
+              typeConfig.find((item) => item.type === exp.type)?.icon || Code;
+
+            const Color =
+              typeConfig.find((item) => item.type === exp.type)?.color ||
+              "from-gray-500 to-gray-700";
+
             const isLeft = index % 2 === 0;
 
             return (
@@ -120,7 +100,7 @@ export function ExperienceSection() {
                 {/* Punto en la línea */}
                 <div className="absolute top-1/2 left-0 z-10 -translate-y-1/2 transform md:left-1/2 md:-translate-x-1/2">
                   <div
-                    className={`h-12 w-12 rounded-full bg-gradient-to-r ${exp.color} flex items-center justify-center border-4 border-black transition-all duration-300 ${activeExperience === index ? "scale-125 shadow-lg" : ""}`}
+                    className={`h-12 w-12 rounded-full bg-gradient-to-r ${Color} flex items-center justify-center border-4 border-black transition-all duration-300 ${activeExperience === index ? "scale-125 shadow-lg" : ""}`}
                   >
                     <Icon className="h-6 w-6 text-white" />
                   </div>
@@ -158,7 +138,7 @@ export function ExperienceSection() {
                   </p>
 
                   <section className="mb-4 space-y-2">
-                    {exp.achievements.map((achievement, achIndex) => (
+                    {exp.achievements?.map((achievement, achIndex) => (
                       <article
                         key={achIndex}
                         className="flex items-start gap-2"
@@ -170,12 +150,12 @@ export function ExperienceSection() {
                   </section>
 
                   <article className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech, techIndex) => (
+                    {exp.technologies?.map((tech, techIndex) => (
                       <span
                         key={techIndex}
                         className="rounded-full border border-blue-500/30 bg-gradient-to-r from-blue-500/20 to-purple-500/20 px-3 py-1 text-xs text-blue-300"
                       >
-                        {tech}
+                        {String(tech)}
                       </span>
                     ))}
                   </article>
