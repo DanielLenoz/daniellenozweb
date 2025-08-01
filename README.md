@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portafolio de Daniel Rodriguez
 
-## Getting Started
+> ¡Bienvenido a mi universo digital! 🚀
 
-First, run the development server:
+Este es el repositorio de mi portafolio personal como **Desarrollador Full Stack** y **Creador Digital**. Aquí muestro mi experiencia, proyectos destacados y habilidades en tecnologías modernas.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<img align="center" alt="Tu Nombre" width="100%" src="https://github-production-user-asset-6210df.s3.amazonaws.com/98136538/473544983-fe5cd74c-a01c-4e71-bbb8-53f73a62fdc0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250801T170202Z&X-Amz-Expires=300&X-Amz-Signature=1299d8cc91b8c3195f6f61a9100ad07f7578e3016cf8be6e491edea4aec47b95&X-Amz-SignedHeaders=host">
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Sobre mí
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Soy Daniel Rodriguez, apasionado por el desarrollo web y la creación de interfaces dinámicas, accesibles y responsivas. Tengo **2 años de experiencia** trabajando con **React**, **Next.js** y herramientas modernas del ecosistema JavaScript.
 
-## Learn More
+- 💻 Desarrollador Full Stack
+- 🎨 Creador Digital
+- 🌐 Apasionado por la tecnología y el aprendizaje continuo
 
-To learn more about Next.js, take a look at the following resources:
+## Tecnologías principales
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend:** React, Next.js, CSS Modules, TailwindCSS
+- **Backend:** Node.js, Supabase
+- **Herramientas:** Git, Vercel, Figma
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## ¿Cómo ejecutar el proyecto?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/DanielLenoz/daniellenozweb.git
+   ```
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Ejecuta el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contribuciones
+
+Las contribuciones son bienvenidas. Si deseas mejorar el proyecto, sigue estos pasos:
+
+1. Fork este repositorio.
+2. Crea una rama para tu nueva función: `git checkout -b nueva-funcion`
+3. Realiza los cambios necesarios y realiza commit: `git commit -am 'Agregar nueva función'`
+4. Push a la rama: `git push origin nueva-funcion`
+5. Abre un Pull Request en este repositorio.
+
+## Despliegue
+
+Este portafolio está desplegado en [Vercel](https://vercel.com/), lo que garantiza velocidad y disponibilidad.
+
+## Contacto
+
+¿Te gustaría trabajar conmigo o tienes alguna consulta?
+
+- 📧 Email: daniellenozdev@gmail.com
+- 💼 LinkedIn: [Daniel Rodriguez](https://www.linkedin.com/in/daniel-steven-rodriguez-verano-417472241)
+- Sitio web: [DanielLenoz](https://daniellenozweb.vercel.app)
+
+---
+
+¡Gracias por visitar mi portafolio! Si te gusta mi trabajo, no dudes en contactarme o explorar mis proyectos.
+
+## Licencia
+
+Este proyecto se encuentra bajo la Licencia [MIT](LICENSE).
