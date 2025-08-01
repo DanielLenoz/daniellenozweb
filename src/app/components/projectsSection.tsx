@@ -80,7 +80,7 @@ export function ProjectsSection() {
               >
                 <section className="absolute right-4 bottom-4 left-4 flex gap-2">
                   <button className="rounded-lg bg-blue-600 hover:bg-blue-700">
-                    <Link
+                    <a
                       href={project.links?.website || "#"}
                       target="_blank"
                       className="flex items-center gap-2 px-4 py-0.5"
@@ -88,18 +88,18 @@ export function ProjectsSection() {
                       {/* AQUÍ PUEDES USAR: GlowingButton de ReactBits */}
                       <Eye className="mr-2 h-4 w-4" />
                       Demo
-                    </Link>
+                    </a>
                   </button>
                   {/* AQUÍ PUEDES USAR: GlowingButton de ReactBits */}
                   <button className="rounded-lg border-2 border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-black">
-                    <Link
+                    <a
                       href={project.links?.github || "#"}
                       target="_blank"
                       className="flex items-center gap-2 px-4 py-0.5"
                     >
                       <Github className="mr-2 h-4 w-4" />
                       Código
-                    </Link>
+                    </a>
                   </button>
                 </section>
               </section>
@@ -128,23 +128,23 @@ export function ProjectsSection() {
               <section className="flex gap-3">
                 {/* AQUÍ PUEDES USAR: GlowingButton de ReactBits */}
                 <button className="h-10 w-full rounded-lg border-2 border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-black">
-                  <Link
-                    href={`/proyecto/${project.id}`}
+                  <a
+                    href={`/Projects/${encodeURIComponent(project.title)}`}
                     className="flex items-center justify-center gap-2 px-4 py-0.5"
                   >
                     <Eye className="mr-2 h-4 w-4" />
                     Ver Detalles
-                  </Link>
+                  </a>
                 </button>
                 {/* AQUÍ PUEDES USAR: GlowingButton de ReactBits */}
                 <button className="rounded-lg border-2 border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-black">
-                  <Link
+                  <a
                     href={project.links?.github || "#"}
                     target="_blank"
                     className="flex items-center gap-2 px-3 py-0.5"
                   >
                     <Github className="h-4 w-4" />
-                  </Link>
+                  </a>
                 </button>
               </section>
             </article>
