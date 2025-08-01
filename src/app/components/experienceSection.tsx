@@ -34,11 +34,11 @@ export function ExperienceSection() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        let { data: Educacion, error: error1 } = await supabase
+        const { data: Educacion, error: error1 } = await supabase
           .from("Educacion")
           .select("*");
 
-        let { data: Experiences, error: error2 } = await supabase
+        const { data: Experiences, error: error2 } = await supabase
           .from("Experiences")
           .select("*");
 
