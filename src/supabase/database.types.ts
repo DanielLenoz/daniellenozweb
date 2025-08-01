@@ -5,7 +5,6 @@ export interface DataType {
   period: string;
   company: string;
   type: string;
-  color: any;
   id: number;
   createdAt?: string; // Optional for flexibility
   title: string;

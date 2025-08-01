@@ -112,7 +112,7 @@ export function ExperienceSection() {
                 >
                   <section className="mb-4 grid justify-items-start">
                     <p
-                      className={`rounded-2xl bg-gradient-to-r px-3 font-bold ${exp.color} mb-2 border-none text-white`}
+                      className={`rounded-2xl bg-gradient-to-r px-3 font-bold ${Color} mb-2 border-none text-white`}
                     >
                       {exp.type}
                     </p>
