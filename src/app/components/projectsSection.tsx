@@ -82,6 +82,7 @@ export function ProjectsSection() {
                   <button className="rounded-lg bg-blue-600 hover:bg-blue-700">
                     <Link
                       href={project.links?.website || "#"}
+                      target="_blank"
                       className="flex items-center gap-2 px-4 py-0.5"
                     >
                       {/* AQUÍ PUEDES USAR: GlowingButton de ReactBits */}
@@ -93,6 +94,7 @@ export function ProjectsSection() {
                   <button className="rounded-lg border-2 border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-black">
                     <Link
                       href={project.links?.github || "#"}
+                      target="_blank"
                       className="flex items-center gap-2 px-4 py-0.5"
                     >
                       <Github className="mr-2 h-4 w-4" />
@@ -138,6 +140,7 @@ export function ProjectsSection() {
                 <button className="rounded-lg border-2 border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-black">
                   <Link
                     href={project.links?.github || "#"}
+                    target="_blank"
                     className="flex items-center gap-2 px-3 py-0.5"
                   >
                     <Github className="h-4 w-4" />
