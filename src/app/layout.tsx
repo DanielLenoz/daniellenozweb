@@ -13,11 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DanielCreator",
-  description: "creador de paginas web dinamicas y estaticas",
+  title: "DanielLenoz",
+  description: "desarrollador full stack, paginas web dinamicas y estaticas",
   keywords: [
     "landing page",
-    "wed dynamic",
+    "web dynamic",
     "paginas estaticas",
     "paginas dinamicas",
     "servicios web",
