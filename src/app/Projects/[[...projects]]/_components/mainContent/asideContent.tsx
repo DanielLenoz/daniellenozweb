@@ -1,6 +1,7 @@
+import { DataType } from "app/supabase/database.types";
 import { ExternalLink, Github } from "lucide-react";
 
-export default function AsideContent({ project }: { project: any }) {
+export default function AsideContent({ project }: { project: DataType }) {
   return (
     <aside className="sticky top-24 h-fit space-y-8 rounded-lg border-2 border-white/10 bg-gradient-to-br from-gray-900/80 to-gray-800/80 p-6">
       {/* Información del proyecto */}
