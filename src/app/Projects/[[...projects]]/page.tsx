@@ -1,3 +1,4 @@
+import React from "react";
 import { Target, Palette, Database, Globe } from "lucide-react";
 import { supabase } from "app/supabase/client";
 import Header from "./_components/headerContent";
@@ -20,18 +21,22 @@ export const metadata: Metadata = {
   ],
 };
 
-interface Projects {
+interface ProjectsPageProps {
   params: {
     projects: string[];
   };
 }
 
-export default async function Projects(props: Projects) {
-  const { projects } = props.params;
+export default async function Projects({
+  params,
+}: {
+  params: Promise<{ projects?: string[] }>;
+}) {
+  const { projects } = await params;
 
   const { data: Projects, error } = await supabase.from("Projects").select("*");
-  const decodedTitle = decodeURIComponent(projects[0]);
 
+  const decodedTitle = projects ? decodeURIComponent(projects[0]) : null;
   const filteredProject = Projects?.filter(
     (data) => data.title == decodedTitle,
   );
@@ -47,13 +52,13 @@ export default async function Projects(props: Projects) {
     <>
       {filteredProject?.map((project, index) => {
         return (
-          <>
+          <React.Fragment key={index}>
             <Header
               website={project.links?.website}
               github={project.links?.github}
             />
             <MainContent project={project} categoryIcon={categoryIcon} />
-          </>
+          </React.Fragment>
         );
       })}
 
