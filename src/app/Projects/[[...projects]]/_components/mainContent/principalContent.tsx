@@ -36,6 +36,7 @@ function ProjectSection<T>({
 
 // Componente Principal
 export default function PrincipalContent({ project }: { project: DataType }) {
+  console.log("Project Data:", project);
   return (
     <section className="space-y-12 lg:col-span-2">
       {/* Tecnologías */}
@@ -45,12 +46,12 @@ export default function PrincipalContent({ project }: { project: DataType }) {
         iconColorClass="text-blue-400"
         data={project.technologies || []}
         renderItem={(techObj, index) => (
-          <div
+          <p
             key={index}
             className="rounded-lg border-1 border-blue-500/30 bg-gradient-to-r from-blue-500/20 to-purple-500/20 px-4 py-2 text-blue-300"
           >
-            {techObj.tech}
-          </div>
+            {String(techObj)}
+          </p>
         )}
         gridClass="flex flex-wrap gap-3" // Clase específica para el layout de tecnologías
       />
