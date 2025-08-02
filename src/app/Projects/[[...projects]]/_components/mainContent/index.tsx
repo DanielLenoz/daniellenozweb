@@ -1,17 +1,18 @@
 import Image from "next/image";
 import AsideContent from "./asideContent";
 import PrincipalContent from "./principalContent";
-import { Globe, Users } from "lucide-react";
+import { Globe, LucideIcon, Users } from "lucide-react";
+import { DataType } from "app/supabase/database.types";
 
 export default function MainContent({
   project,
   categoryIcon,
 }: {
-  project: any;
-  categoryIcon: any;
+  project: DataType;
+  categoryIcon: { title: string; icon: LucideIcon }[];
 }) {
   const CategoryIcon =
-    categoryIcon.find((item: any) => item.title === project.category)?.icon ||
+    categoryIcon.find((item: { title: string; icon: LucideIcon }) => item.title === project.category)?.icon ||
     Globe;
 
   return (

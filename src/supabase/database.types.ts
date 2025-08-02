@@ -1,6 +1,8 @@
 export interface DataType {
+  team: string;
+  longDescription: string;
   institution: string;
-  achievements: [string];
+  achievements: [];
   location: string;
   period: string;
   company: string;
@@ -16,6 +18,9 @@ export interface DataType {
   links?: Links; // Specific to Projects
   certificateImgs?: image[]; // Specific to Certificates (renamed for clarity)
   description?: string; // Specific to Blogs
+  features?: string[];
+  challenges?: string[];
+  learnings?: string[];
 }
 
 export interface image {

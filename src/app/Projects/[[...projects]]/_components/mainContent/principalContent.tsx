@@ -1,38 +1,41 @@
+import { DataType } from "app/supabase/database.types";
 import { Code, Lightbulb, Target } from "lucide-react";
 import React from "react";
 
 // Define una interfaz para las props del componente ProjectSection
-interface ProjectSectionProps {
+interface ProjectSectionProps<T> {
   title: string;
   icon: React.ElementType; // Usamos React.ElementType para los componentes de icono
   iconColorClass: string;
-  data: string[];
-  renderItem: (item: string, index: number) => React.ReactNode; // Permite personalizar cómo se renderiza cada elemento
+  data: T[]; // Puede ser un array de strings o un array de objetos con una propiedad 'tech'
+  renderItem: (item: T, index: number) => React.ReactNode; // Permite personalizar cómo se renderiza cada elemento
   gridClass?: string; // Opcional para aplicar clases de grid si es necesario
 }
 
 // Componente reutilizable para las secciones del proyecto
-const ProjectSection: React.FC<ProjectSectionProps> = ({
+function ProjectSection<T>({
   title,
   icon: Icon,
   iconColorClass,
   data,
   renderItem,
   gridClass,
-}) => (
-  <section className="rounded-lg border-2 border-white/10 bg-gradient-to-br from-gray-900/80 to-gray-800/80 p-8">
-    <h2 className="mb-6 flex items-center gap-3 text-2xl font-bold text-white">
-      <Icon className={`h-6 w-6 ${iconColorClass}`} />
-      {title}
-    </h2>
-    <section className={gridClass || "space-y-4"}>
-      {data.map(renderItem)}
+}: ProjectSectionProps<T>) {
+  return (
+    <section className="rounded-lg border-2 border-white/10 bg-gradient-to-br from-gray-900/80 to-gray-800/80 p-8">
+      <h2 className="mb-6 flex items-center gap-3 text-2xl font-bold text-white">
+        <Icon className={`h-6 w-6 ${iconColorClass}`} />
+        {title}
+      </h2>
+      <section className={gridClass || "space-y-4"}>
+        {data.map(renderItem)}
+      </section>
     </section>
-  </section>
-);
+  );
+}
 
 // Componente Principal
-export default function PrincipalContent({ project }: { project: any }) {
+export default function PrincipalContent({ project }: { project: DataType }) {
   return (
     <section className="space-y-12 lg:col-span-2">
       {/* Tecnologías */}
@@ -40,13 +43,13 @@ export default function PrincipalContent({ project }: { project: any }) {
         title="Tecnologías Utilizadas"
         icon={Code}
         iconColorClass="text-blue-400"
-        data={project.technologies}
-        renderItem={(techObj: string, index: number) => (
+        data={project.technologies || []}
+        renderItem={(techObj, index) => (
           <div
             key={index}
             className="rounded-lg border-1 border-blue-500/30 bg-gradient-to-r from-blue-500/20 to-purple-500/20 px-4 py-2 text-blue-300"
           >
-            {techObj}
+            {techObj.tech}
           </div>
         )}
         gridClass="flex flex-wrap gap-3" // Clase específica para el layout de tecnologías
@@ -57,8 +60,8 @@ export default function PrincipalContent({ project }: { project: any }) {
         title="Características Principales"
         icon={Target}
         iconColorClass="text-green-400"
-        data={project.features}
-        renderItem={(feature: string, index: number) => (
+        data={project.features || []}
+        renderItem={(feature, index) => (
           <article key={index} className="flex items-start gap-3">
             <div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-green-400" />
             <p className="text-gray-300">{feature}</p>
@@ -72,8 +75,8 @@ export default function PrincipalContent({ project }: { project: any }) {
         title="Desafíos Superados"
         icon={Target}
         iconColorClass="text-orange-400"
-        data={project.challenges}
-        renderItem={(challenge: string, index: number) => (
+        data={project.challenges || []}
+        renderItem={(challenge, index) => (
           <article key={index} className="flex items-start gap-3">
             <div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-orange-400" />
             <p className="text-gray-300">{challenge}</p>
@@ -86,8 +89,8 @@ export default function PrincipalContent({ project }: { project: any }) {
         title="Aprendizajes Clave"
         icon={Lightbulb}
         iconColorClass="text-yellow-400"
-        data={project.learnings}
-        renderItem={(learning: string, index: number) => (
+        data={project.learnings || []}
+        renderItem={(learning, index) => (
           <article key={index} className="flex items-start gap-3">
             <div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
             <p className="text-gray-300">{learning}</p>
