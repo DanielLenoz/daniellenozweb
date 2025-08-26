@@ -32,7 +32,7 @@ export function SkillsSection() {
       </section>
 
       {/* Bento Grid Layout */}
-      <section className="grid auto-rows-[120px] grid-cols-2 gap-4 md:grid-cols-6">
+      <section className="grid grid-cols-2 gap-4 md:grid-cols-6">
         {technologies.map((tech, index) => {
           const Icon = tech.icon;
           const isHovered = hoveredTech === tech.name;

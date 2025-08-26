@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+html {
+  overflow-x: hidden;
+}
 
 ::-webkit-scrollbar {
   width: 8px;

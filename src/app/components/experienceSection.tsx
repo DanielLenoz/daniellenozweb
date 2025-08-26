@@ -108,7 +108,7 @@ export function ExperienceSection() {
 
                 {/* Card de experiencia */}
                 <section
-                  className={`ml-16 w-full md:ml-0 md:w-5/12 ${isLeft ? "" : "md:mr-16"} rounded-2xl border-1 border-transparent bg-gradient-to-br from-gray-900/80 to-gray-800/80 transition-all duration-500 hover:border-white/20 ${activeExperience === index ? "scale-105 border-white/30" : ""} group p-6`}
+                  className={`ml-8 w-4/5 md:ml-0 md:w-5/12 ${isLeft ? "" : "md:mr-0"} rounded-2xl border-1 border-transparent bg-gradient-to-br from-gray-900/80 to-gray-800/80 transition-all duration-500 hover:border-white/20 ${activeExperience === index ? "scale-105 border-white/30" : ""} group p-6`}
                 >
                   <section className="mb-4 grid justify-items-start">
                     <p
