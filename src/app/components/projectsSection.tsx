@@ -13,7 +13,6 @@ export function ProjectsSection() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch projects from Supabase on mount
   useEffect(() => {
     const fetchProjects = async () => {
       try {
@@ -43,21 +42,17 @@ export function ProjectsSection() {
       className="mx-auto max-w-6xl bg-gradient-to-b from-transparent to-gray-900/20 px-4 py-20"
     >
       <section className="mb-16 text-center">
-        {/* AQUÍ PUEDES USAR: TextGenerateEffect de Aceternity UI */}
         <h2 className="mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
           Mis Proyectos
         </h2>
-        {/* AQUÍ PUEDES USAR: TextGenerateEffect de Aceternity UI */}
         <p className="mx-auto max-w-3xl text-xl text-gray-300">
           Una selección de mis trabajos más recientes, donde combino creatividad
           y tecnología para crear experiencias digitales memorables.
         </p>
       </section>
 
-      {/* AQUÍ PUEDES USAR: InteractiveGrid de ReactBits para toda la grilla */}
       <section className="grid gap-8 md:grid-cols-2">
         {projects.map((project, index) => (
-          /* AQUÍ PUEDES USAR: CardHoverEffect o MorphingCard */
           <section
             key={index}
             className="group overflow-hidden rounded-2xl border-2 border-white/10 bg-gradient-to-br from-gray-900/80 to-gray-800/80 transition-all duration-500 hover:border-white/20"
@@ -65,9 +60,8 @@ export function ProjectsSection() {
             onMouseLeave={() => setHoveredProject(null)}
           >
             <section className="relative overflow-hidden">
-              {/* AQUÍ PUEDES USAR: BackgroundGradient de Aceternity UI para envolver la imagen */}
               <Image
-                src={project.image?.full || "/file.svg"}
+                src={project.image?.small || "/file.svg"}
                 alt={project.title}
                 width={500}
                 height={200}
@@ -85,12 +79,10 @@ export function ProjectsSection() {
                       target="_blank"
                       className="flex items-center gap-2 px-4 py-0.5"
                     >
-                      {/* AQUÍ PUEDES USAR: GlowingButton de ReactBits */}
                       <Eye className="mr-2 h-4 w-4" />
                       Demo
                     </a>
                   </button>
-                  {/* AQUÍ PUEDES USAR: GlowingButton de ReactBits */}
                   <button className="rounded-lg border-2 border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-black">
                     <a
                       href={project.links?.github || "#"}
@@ -126,7 +118,6 @@ export function ProjectsSection() {
               </section>
 
               <section className="flex gap-3">
-                {/* AQUÍ PUEDES USAR: GlowingButton de ReactBits */}
                 <button className="h-10 w-full rounded-lg border-2 border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-black">
                   <a
                     href={`/Projects/${encodeURIComponent(project.title)}`}
@@ -136,7 +127,6 @@ export function ProjectsSection() {
                     Ver Detalles
                   </a>
                 </button>
-                {/* AQUÍ PUEDES USAR: GlowingButton de ReactBits */}
                 <button className="rounded-lg border-2 border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-black">
                   <a
                     href={project.links?.github || "#"}

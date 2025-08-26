@@ -23,7 +23,6 @@ export function HeroSection() {
     };
   }, []);
 
-  // Función para hacer scroll suave a la sección de proyectos
   const handleScrollToProjects = () => {
     const section = document.getElementById("proyectos");
     if (section) {
@@ -79,10 +78,8 @@ export function HeroSection() {
         }}
       />
 
-      {/* Contenido principal */}
       <section className="relative z-10 mx-auto max-w-5xl px-4 py-1 text-center">
         <section className="mb-8">
-          {/* Título principal con animación de aparición */}
           <article
             className={`${styles["animate-fade-in-up"]} mb-6`}
             style={{ animationDelay: "0.2s" }}
@@ -99,7 +96,6 @@ export function HeroSection() {
             </h1>
           </article>
 
-          {/* Subtítulo animado */}
           <section
             className={`${styles["animate-fade-in-up"]} mb-8 flex items-center text-2xl text-gray-300 md:text-4xl lg:text-5xl`}
             style={{ animationDelay: "0.4s" }}
@@ -116,7 +112,6 @@ export function HeroSection() {
             </p>
           </section>
 
-          {/* Descripción con efecto de escritura */}
           <p
             className="animate-fade-in-up mx-auto max-w-3xl text-lg leading-relaxed text-gray-400 md:text-xl"
             style={{ animationDelay: "0.6s" }}
@@ -135,7 +130,6 @@ export function HeroSection() {
           </p>
         </section>
 
-        {/* Botones con animaciones mejoradas */}
         <section
           className="animate-fade-in-up mb-12 flex flex-col items-center justify-center gap-6 sm:flex-row"
           style={{ animationDelay: "0.8s" }}
@@ -161,7 +155,6 @@ export function HeroSection() {
           </button>
         </section>
 
-        {/* Enlaces sociales con efectos avanzados */}
         <section
           className="animate-fade-in-up mb-12 flex justify-center space-x-8"
           style={{ animationDelay: "1s" }}

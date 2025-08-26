@@ -2,17 +2,15 @@ import { DataType } from "app/supabase/database.types";
 import { Code, Lightbulb, Target } from "lucide-react";
 import React from "react";
 
-// Define una interfaz para las props del componente ProjectSection
 interface ProjectSectionProps<T> {
   title: string;
-  icon: React.ElementType; // Usamos React.ElementType para los componentes de icono
+  icon: React.ElementType;
   iconColorClass: string;
-  data: T[]; // Puede ser un array de strings o un array de objetos con una propiedad 'tech'
-  renderItem: (item: T, index: number) => React.ReactNode; // Permite personalizar cómo se renderiza cada elemento
-  gridClass?: string; // Opcional para aplicar clases de grid si es necesario
+  data: T[];
+  renderItem: (item: T, index: number) => React.ReactNode;
+  gridClass?: string; 
 }
 
-// Componente reutilizable para las secciones del proyecto
 function ProjectSection<T>({
   title,
   icon: Icon,
@@ -34,12 +32,10 @@ function ProjectSection<T>({
   );
 }
 
-// Componente Principal
 export default function PrincipalContent({ project }: { project: DataType }) {
   console.log("Project Data:", project);
   return (
     <section className="space-y-12 lg:col-span-2">
-      {/* Tecnologías */}
       <ProjectSection
         title="Tecnologías Utilizadas"
         icon={Code}
@@ -53,10 +49,9 @@ export default function PrincipalContent({ project }: { project: DataType }) {
             {String(techObj)}
           </p>
         )}
-        gridClass="flex flex-wrap gap-3" // Clase específica para el layout de tecnologías
+        gridClass="flex flex-wrap gap-3" 
       />
 
-      {/* Características */}
       <ProjectSection
         title="Características Principales"
         icon={Target}
@@ -68,10 +63,9 @@ export default function PrincipalContent({ project }: { project: DataType }) {
             <p className="text-gray-300">{feature}</p>
           </article>
         )}
-        gridClass="grid gap-1 md:grid-cols-2" // Clase específica para el layout de características
+        gridClass="grid gap-1 md:grid-cols-2"
       />
 
-      {/* Desafíos */}
       <ProjectSection
         title="Desafíos Superados"
         icon={Target}
@@ -85,7 +79,6 @@ export default function PrincipalContent({ project }: { project: DataType }) {
         )}
       />
 
-      {/* Aprendizajes */}
       <ProjectSection
         title="Aprendizajes Clave"
         icon={Lightbulb}

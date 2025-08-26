@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { technologies } from "./technologies"; // Assuming you have a JSON file with your tech stack
+import { technologies } from "./technologies";
 import { Code2, Globe, Box, Layers } from "lucide-react";
 
 export function SkillsSection() {
@@ -31,7 +31,6 @@ export function SkillsSection() {
         </p>
       </section>
 
-      {/* Bento Grid Layout */}
       <section className="grid grid-cols-2 gap-4 md:grid-cols-6">
         {technologies.map((tech, index) => {
           const Icon = tech.icon;
@@ -103,7 +102,6 @@ export function SkillsSection() {
         })}
       </section>
 
-      {/* Estadísticas actualizadas */}
       <section className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4">
         {[
           { number: "16+", label: "Tecnologías dominadas", icon: Code2 },

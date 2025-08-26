@@ -12,8 +12,10 @@ export default function MainContent({
   categoryIcon: { title: string; icon: LucideIcon }[];
 }) {
   const CategoryIcon =
-    categoryIcon.find((item: { title: string; icon: LucideIcon }) => item.title === project.category)?.icon ||
-    Globe;
+    categoryIcon.find(
+      (item: { title: string; icon: LucideIcon }) =>
+        item.title === project.category,
+    )?.icon || Globe;
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -31,12 +33,10 @@ export default function MainContent({
               </div>
             </div>
 
-            {/* AQUÍ PUEDES USAR: TextGenerateEffect o TypewriterEffect */}
             <h1 className="mb-6 bg-gradient-to-r from-white via-blue-200 to-purple-400 bg-clip-text text-4xl font-bold text-transparent md:text-6xl">
               {project.title}
             </h1>
 
-            {/* AQUÍ PUEDES USAR: TextGenerateEffect de Aceternity UI */}
             <p className="mx-auto mb-8 max-w-3xl text-xl text-gray-300">
               {project.longDescription}
             </p>
@@ -47,7 +47,6 @@ export default function MainContent({
             </p>
           </section>
 
-          {/* Imagen principal */}
           <article className="group relative overflow-hidden rounded-2xl border border-white/10">
             <Image
               src={project.image?.full || "/placeholder.svg"}
@@ -62,7 +61,6 @@ export default function MainContent({
         </section>
       </section>
 
-      {/* Contenido principal */}
       <section className="mx-auto grid max-w-6xl gap-12 px-4 py-20 lg:grid-cols-3">
         <PrincipalContent project={project} />
         <AsideContent project={project} />

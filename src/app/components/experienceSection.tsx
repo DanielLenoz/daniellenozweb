@@ -22,7 +22,6 @@ export function ExperienceSection() {
       icon: Users,
       color: "from-green-500 to-emerald-500",
     },
-    // Agrega más tipos aquí si lo necesitas
   ];
 
   const [activeExperience, setActiveExperience] = useState(0);
@@ -75,7 +74,6 @@ export function ExperienceSection() {
         </p>
       </article>
 
-      {/* Timeline de Experiencia */}
       <section className="relative">
         {/* Línea vertical */}
         <div className="absolute left-4 h-full w-0.5 transform rounded-2xl bg-gradient-to-b from-blue-500 to-purple-600 md:left-1/2 md:-translate-x-1/2"></div>
@@ -166,7 +164,6 @@ export function ExperienceSection() {
         </article>
       </section>
 
-      {/* Sección de Educación */}
       <section className="mt-20">
         <h3 className="mb-12 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-center text-3xl font-bold text-transparent">
           Educación

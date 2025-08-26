@@ -5,7 +5,6 @@ import emailjs from "@emailjs/browser";
 
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
-// Interface for form data
 interface FormData {
   user_name: string;
   user_email: string;
@@ -22,7 +21,6 @@ export function ContactSection() {
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // service_b9y8nxf
     emailjs
       .sendForm("service_b9y8nxf", "template_q7lnbmy", form.current ?? "", {
         publicKey: "J0rpwA8wQ8a8gd1XM",
@@ -38,7 +36,6 @@ export function ContactSection() {
       );
   };
   //-----------------------------------------------------
-
 
   const contactInfo = [
     {
@@ -66,8 +63,8 @@ export function ContactSection() {
       id="contacto"
       className="bg-gradient-to-t from-gray-900/40 to-transparent px-4 py-20"
     >
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-16 text-center">
+      <section className="mx-auto max-w-6xl">
+        <section className="mb-16 text-center">
           <h2 className="mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
             Contacto
           </h2>
@@ -75,12 +72,11 @@ export function ContactSection() {
             ¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas y
             colaborar contigo para crear algo extraordinario.
           </p>
-        </div>
+        </section>
 
-        <div className="grid gap-12 lg:grid-cols-2">
-          {/* Información de contacto */}
-          <div className="space-y-8">
-            <div>
+        <section className="grid gap-12 lg:grid-cols-2">
+          <section className="space-y-8">
+            <article>
               <h3 className="mb-6 text-2xl font-semibold text-white">
                 Hablemos
               </h3>
@@ -89,9 +85,9 @@ export function ContactSection() {
                 interesantes o simplemente charlar sobre tecnología y desarrollo
                 web.
               </p>
-            </div>
+            </article>
 
-            <div className="space-y-6">
+            <article className="space-y-6">
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
                 return (
@@ -103,18 +99,17 @@ export function ContactSection() {
                     <div className="rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 p-3 transition-all duration-300 group-hover:from-blue-500/30 group-hover:to-purple-500/30">
                       <Icon className="h-6 w-6 text-blue-400" />
                     </div>
-                    <div>
+                    <article>
                       <h4 className="font-semibold text-white">{info.title}</h4>
                       <p className="text-gray-400">{info.value}</p>
-                    </div>
+                    </article>
                   </a>
                 );
               })}
-            </div>
-          </div>
+            </article>
+          </section>
 
-          {/* Formulario de contacto */}
-          <div className="border-white/10 bg-gradient-to-br from-gray-900/80 to-gray-800/80 p-8">
+          <section className="border-white/10 bg-gradient-to-br from-gray-900/80 to-gray-800/80 p-8">
             <form onSubmit={sendEmail} className="space-y-6">
               <div>
                 <label
@@ -184,16 +179,15 @@ export function ContactSection() {
                 Enviar Mensaje
               </button>
             </form>
-          </div>
-        </div>
+          </section>
+        </section>
 
-        {/* Footer */}
-        <div className="mt-20 border-t border-white/10 pt-8 text-center">
+        <footer className="mt-20 border-t border-white/10 pt-8 text-center">
           <p className="text-gray-400">
             © 2024 Daniel Lenoz. Todos los derechos reservados.
           </p>
-        </div>
-      </div>
+        </footer>
+      </section>
     </section>
   );
 }
