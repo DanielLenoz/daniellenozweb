@@ -5,9 +5,7 @@
 Este es el repositorio de mi portafolio personal como **Desarrollador Full Stack** y **Creador Digital**. Aquí muestro mi experiencia, proyectos destacados y habilidades en tecnologías modernas.
 
 ---
-
-<img align="center" alt="Tu Nombre" width="100%" src="https://github-production-user-asset-6210df.s3.amazonaws.com/98136538/473544983-fe5cd74c-a01c-4e71-bbb8-53f73a62fdc0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250801T170202Z&X-Amz-Expires=300&X-Amz-Signature=1299d8cc91b8c3195f6f61a9100ad07f7578e3016cf8be6e491edea4aec47b95&X-Amz-SignedHeaders=host">
-
+<img width="1306" height="684" alt="image" src="https://github.com/user-attachments/assets/2f805a13-956d-443f-a2e2-a297207a47c5" />
 ## Sobre mí
 
 Soy Daniel Rodriguez, apasionado por el desarrollo web y la creación de interfaces dinámicas, accesibles y responsivas. Tengo **2 años de experiencia** trabajando con **React**, **Next.js** y herramientas modernas del ecosistema JavaScript.
