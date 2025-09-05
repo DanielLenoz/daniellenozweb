@@ -6,6 +6,7 @@ Este es el repositorio de mi portafolio personal como **Desarrollador Full Stack
 
 ---
 <img width="1306" height="684" alt="image" src="https://github.com/user-attachments/assets/2f805a13-956d-443f-a2e2-a297207a47c5" />
+
 ## Sobre mí
 
 Soy Daniel Rodriguez, apasionado por el desarrollo web y la creación de interfaces dinámicas, accesibles y responsivas. Tengo **2 años de experiencia** trabajando con **React**, **Next.js** y herramientas modernas del ecosistema JavaScript.
